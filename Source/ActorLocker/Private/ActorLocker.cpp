@@ -22,7 +22,7 @@ void FActorLockerModule::StartupModule()
 	const auto ColumnVisibility = ESceneOutlinerColumnVisibility::Visible;
 	const auto PriorityIndex = 9;
 	const auto Factory = FCreateSceneOutlinerColumn::CreateLambda([](ISceneOutliner& SceneOutliner){ return MakeShareable(new FSceneOutlinerActorLocker(SceneOutliner)); });
-	const auto bCanBeHidden = false;
+	const auto bCanBeHidden = true;
 	const auto FillSize = TOptional<float>();
 	const auto ColumnLabel = FSceneOutlinerActorLocker::Lock_Localized();
 	const auto ColumnInfo = FSceneOutlinerColumnInfo(ColumnVisibility, PriorityIndex, Factory, bCanBeHidden, FillSize, ColumnLabel);
